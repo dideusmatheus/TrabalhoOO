@@ -4,7 +4,7 @@ package mercearia.trabalho.oo;
  *
  * @author matheus
  */
-public abstract class Produto implements ExibirDados {
+public abstract class Produto  {
     protected int idProduto;
     protected String nome;
     protected String descricao;
@@ -65,20 +65,6 @@ public abstract class Produto implements ExibirDados {
         }
     }
     
-    // metodos
-
-    /**
-     *
-     */
-    @Override
-    public void ExibirDados(){
-        System.out.println("ID do produto : " +this.idProduto);
-        System.out.println("Nome do produto : " +this.nome);
-        System.out.println("Descricao do produto : " +this.descricao);
-        System.out.println("Valor do produto : " +this.valor);
-        System.out.println("Quantidade do produto :" +this.quantidade);
-        System.out.println("");
-    }
     
 }
 

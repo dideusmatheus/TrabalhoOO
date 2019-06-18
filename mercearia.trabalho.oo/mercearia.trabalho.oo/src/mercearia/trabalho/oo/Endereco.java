@@ -1,35 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mercearia.trabalho.oo;
 
 import java.util.Scanner;
 
-public class Endereco extends Pessoa implements ExibirDados {
-    private String rua;
-    private int numero;
+/**
+ *
+ * @author Gabriel Lopes
+ */
+public class Endereco extends Pessoa {
+    private String Rua;
+    private String numero;
     private String bairro;
     private String cidade;
-    
-    // construtor
-    public Endereco (){}
-    
-    public Endereco(String rua, int numero, String bairro, String cidade){
-        this.rua=rua;
-        this.numero=numero;
-        this.bairro=bairro;
-        this.cidade=cidade;
-    }
-    
+
     // get e set
     public String getRua() {
-        return rua;
+        return Rua;
     }
-    public void setRua(String rua) {
-        this.rua = rua;
+    public void setRua(String Rua) {
+        this.Rua = Rua;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
@@ -48,21 +47,26 @@ public class Endereco extends Pessoa implements ExibirDados {
     }
     
     // metodos
+    
     @Override
     public void ExibirDados(){
-        System.out.println("Rua : " +this.rua);
+        System.out.println("Rua : " +this.Rua);
         System.out.println("Numero : " +this.numero);
         System.out.println("Cidade : " +this.cidade);
         System.out.println("Bairro: " +this.bairro);
         System.out.println("");
     }
     
-     public void cadastrarEndereco(){
+    /**
+     *
+     */
+    @Override
+     public void cadastraEndereco(){
         Scanner entradaU = new Scanner(System.in);
         System.out.println("Digite o nome da RUA: ");
-        this.rua = entradaU.nextLine();
+        this.Rua = entradaU.nextLine();
         System.out.println("Digite o NUMERO da casa: ");
-        this.numero = entradaU.nextInt();
+        this.numero = entradaU.nextLine();
         System.out.println("Digite o nome da CIDADE: ");
         this.cidade = entradaU.nextLine();
         System.out.println("Digite o nome do BAIRRO: ");

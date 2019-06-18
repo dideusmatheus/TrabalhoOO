@@ -1,18 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mercearia.trabalho.oo;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Cliente extends Pessoa implements ExibirDados {
+/**
+ *
+ * @author Gabriel Lopes
+ */
+public class Cliente extends Pessoa {
     protected Pessoa pessoa;
     private int id_pessoa;
-    
-    // construtores
-    public Cliente(){}
-    
-    public Cliente(Pessoa pessoa, int id_pessoa){
-        this.pessoa=pessoa;
-        this.id_pessoa=id_pessoa;
-    }
+    private int i;
+    private boolean l;
 
     // get e set
     public Pessoa getPessoa() {
@@ -32,20 +36,27 @@ public class Cliente extends Pessoa implements ExibirDados {
     }
 
    // metodos
-    @Override
+    
     public void ExibirDados(){
         System.out.println("ID : " +this.id_pessoa);
         System.out.println("");
     }
     
-    /**
-     *
-     */
-    public void cadastrarCliente(){
+    public void cadastraEndereco(){
         Scanner entradaU = new Scanner(System.in);
         System.out.println("Digite o ID do cliente: ");
-        this.id_pessoa = entradaU.nextInt();
-        System.out.println("");
+        do{
+            try{
+            i = entradaU.nextInt();
+            l = false;
+            }
+            catch(InputMismatchException e){
+                System.out.println("O seu ID deverá ser um número inteiro.");
+                entradaU.nextLine();
+            }
+            
+        }while(l);
+
            }
     
 }
